@@ -1,0 +1,65 @@
+body {
+  background-color: rgb(70, 70, 70);
+  font-family:Arial;
+}
+h1 {
+  color: white;
+  text-align: left;
+}
+p {
+  position: absolute;
+  top: 600px;
+  color: white;
+}
+#clock {
+  position: absolute;
+  top: 160px;
+  height: 390px;
+  width: 390px;
+  left: 5%;
+}
+.circle {
+  aspect-ratio: 1/1;
+  width: 110px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: white;
+}
+.dial {
+  background-color: black;
+  width: 10px;
+  height: 53px;
+  position: absolute;
+  transform-origin: center bottom;
+  transform: translate(50px, 2px);
+}
+.u {
+  left: 140px;
+}
+.ur {
+  left: 280px;
+}
+.l {
+  top: 140px;
+}
+.c {
+  left: 140px;
+  top: 140px;
+}
+.r{
+  left: 280px;
+  top: 140px;
+}
+.dl {
+  top: 280px;
+}
+.d {
+  left: 140px;
+  top: 280px;
+}
+.dr {
+  left: 280px;
+  top: 280px;
+}   
+
+
