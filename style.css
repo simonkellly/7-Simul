@@ -33,6 +33,14 @@ p {
   transform-origin: center bottom;
   transform: translate(50px, 2px);
 }
+.twelve {
+  aspect-ratio: 1/1;
+  width: 10px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: red;
+  transform: translate(50px,-10px);
+}
 .u {
   left: 140px;
 }
