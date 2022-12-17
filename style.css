@@ -11,9 +11,12 @@ p {
   top: 600px;
   color: white;
 }
+label {
+  color: white;
+}
 #clock {
   position: absolute;
-  top: 160px;
+  top: 190px;
   height: 390px;
   width: 390px;
   left: 5%;
