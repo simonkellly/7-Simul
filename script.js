@@ -30,19 +30,25 @@ document.addEventListener("keydown", function onEvent(event) {
   }
   else{
     if(event.key.charCodeAt(0)>=97 && event.key.charCodeAt(0) <= 108){
-      if(memo.length<8){
+      if((document.querySelector('input[name="pairs"]:checked').value == '3' && memo.length<8) || (document.querySelector('input[name="pairs"]:checked').value == '4' && memo.length<11)){
         memo+=event.key.toUpperCase();
       }
-      if(memo.length==2 || memo.length==5){
+      if(memo.length==2 || memo.length==5 || memo.length==8){
         memo+=" ";
       }
       document.querySelector("#memo").innerText="memo: "+memo;
     }
-  }    
+  }  
+  
 });
 
 function checkMemo(){
-  realMemo = l[(random[11]-random[13]+144)%12]+l[((random[2]*-1-random[12])+(random[1]-random[3])+144)%12]+" "+l[(random[13]-random[12]+144)%12]+l[(random[3]-random[1]+144)%12]+" "+l[(random[2]-random[1]+random[4]-random[7]+random[6]+random[10]+random[12]+144)%12]+l[(random[9]-random[11]+random[13]+random[0]-random[3]+random[8]-random[5]+144)%12]
+  if (document.querySelector('input[name="pairs"]:checked').value == '3'){
+    realMemo = l[(random[11]-random[13]+144)%12]+l[((random[2]*-1-random[12])+(random[1]-random[3])+144)%12]+" "+l[(random[13]-random[12]+144)%12]+l[(random[3]-random[1]+144)%12]+" "+l[(random[2]-random[1]+random[4]-random[7]+random[6]+random[10]+random[12]+144)%12]+l[(random[9]-random[11]+random[13]+random[0]-random[3]+random[8]-random[5]+144)%12];
+  }
+  if (document.querySelector('input[name="pairs"]:checked').value == '4'){
+    realMemo = l[(random[11]-random[13]+144)%12]+l[((random[2]*-1-random[12])+(random[1]-random[3])+144)%12]+" "+l[(random[13]-random[12]+144)%12]+l[(random[3]-random[1]+144)%12]+" "+l[(random[12]-random[13]+random[3]-random[0]+144)%12]+l[(random[1]-random[4]+144)%12]+" "+l[(random[2]-random[1]+random[4]-random[7]+random[6]+random[10]+random[12]+144)%12]+l[(random[9]-random[11]+random[13]+random[0]-random[3]+random[8]-random[5]+144)%12];
+  }
   if(memo.toUpperCase()==realMemo){
     alert("correct");
   }
@@ -50,9 +56,9 @@ function checkMemo(){
     alert(`Your memo: ${memo.toUpperCase()}\nCorrect memo: ${realMemo}`);
   }
   random = Array.from({length: 14}, () => Math.floor(Math.random() * 12));
-  console.log(random)
+  console.log(random);
   scramble();
-  memo=""
+  memo="";
   document.querySelector("#memo").innerText="memo: ";
 }
 
