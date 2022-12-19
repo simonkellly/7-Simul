@@ -44,7 +44,7 @@ document.addEventListener("keydown", function onEvent(event) {
 
 function checkMemo(){
   if (document.querySelector('input[name="pairs"]:checked').value == '3'){
-    realMemo = l[(random[11]-random[13]+144)%12]+l[((random[2]*-1-random[12])+(random[1]-random[3])+144)%12]+" "+l[(random[13]-random[12]+144)%12]+l[(random[3]-random[1]+144)%12]+" "+l[(random[2]-random[1]+random[4]-random[7]+random[6]+random[10]+random[12]+144)%12]+l[(random[9]-random[11]+random[13]+random[0]-random[3]+random[8]-random[5]+144)%12];
+    realMemo = l[(random[11]-random[13]+144)%12]+l[((random[2]*-1-random[12])+(random[1]-random[3])+144)%12]+" "+l[(random[13]-random[12]+144)%12]+l[(random[3]-random[1]+144)%12]+" "+l[(random[2]-random[1]+random[4]-random[7]+random[6]+random[10]+random[12]+144)%12]+l[(random[9]-random[11]+random[13]+random[0]-random[3]+random[8]-random[5]+144)%12]+" ";
   }
   if (document.querySelector('input[name="pairs"]:checked').value == '4'){
     realMemo = l[(random[11]-random[13]+144)%12]+l[((random[2]*-1-random[12])+(random[1]-random[3])+144)%12]+" "+l[(random[13]-random[12]+144)%12]+l[(random[3]-random[1]+144)%12]+" "+l[(random[12]-random[13]+random[3]-random[0]+144)%12]+l[(random[1]-random[4]+144)%12]+" "+l[(random[2]-random[1]+random[4]-random[7]+random[6]+random[10]+random[12]+144)%12]+l[(random[9]-random[11]+random[13]+random[0]-random[3]+random[8]-random[5]+144)%12];
