@@ -1,22 +1,19 @@
 body {
   background-color: rgb(70, 70, 70);
   font-family:Arial;
+  color: white;
 }
 h1 {
   color: white;
   text-align: left;
 }
-p {
+#info {
   position: absolute;
-  top: 600px;
-  color: white;
-}
-label {
-  color: white;
+  top: 630px;
 }
 #clock {
   position: absolute;
-  top: 190px;
+  top: 220px;
   height: 390px;
   width: 390px;
   left: 5%;
@@ -72,5 +69,6 @@ label {
   left: 280px;
   top: 280px;
 }   
+
 
 
