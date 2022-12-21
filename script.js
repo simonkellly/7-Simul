@@ -154,9 +154,4 @@ function checkMemo() {
   else{
     alert(`Your memo: ${memo.toUpperCase()}\nCorrect memo: ${realMemo}`);
   }
-  random = Array.from({length: 14}, () => Math.floor(Math.random() * 12));
-  console.log(random);
-  scramble();
-  memo="";
-  document.querySelector("#memo").innerText="memo: ";
 }
