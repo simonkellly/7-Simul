@@ -8,10 +8,27 @@
 </head>
 <body>
   <h1><u>7 Simul Memo Trainer</u></h1>
-  <input type="radio" name="pairs" id="3" value="3" checked="checked"><label for="3">3 pairs (dl R \)</label>
-  <input type="radio" name="pairs" id="4" value="4"><label for="4">4 pairs (dl R DR \)</label>
+  pin order: <span id=pinOrder>dl R DR \ UL L ur</span> <button onclick="changePinOrder()">change</button>
+  <div id="pairs">
+    select which moves to memo:
+    <input type="checkbox" value="dl" id="dl" checked="checked">
+    <label for="dl">dl</label>
+    <input type="checkbox" value="R" id="R" checked="checked">
+    <label for="R">R</label>
+    <input type="checkbox" value="DR" id="DR">
+    <label for="DR">DR</label>
+    <input type="checkbox" value="\" id="\" checked="checked">
+    <label for="\">\</label>
+    <input type="checkbox" value="UL" id="UL">
+    <label for="UL">UL</label>
+    <input type="checkbox" value="L" id="L">
+    <label for="L">L</label>
+    <input type="checkbox" value="ur" id="ur">
+    <label for="ur">ur</label></div>
+  </div>
+  <div id="udselect"></div>
   <h1 id="memo">memo:</h1>
-  <p><b>info:</b><br>to use, enter your memo as if you were to start execution with the white dials facing you using the pin order dl R DR \ UL L ur<br>memo 1-12 as A-L<br><b>controls:</b><br>s: scramble<br>space: x2<br>enter: check memo</p>
+  <p id="info"><b>info:</b><br>to use, enter your memo as if you were to start execution with the white dials facing you using the pin order dl R DR \ UL L ur<br>memo 1-12 as A-L<br><b>controls:</b><br>s: scramble<br>space: x2<br>enter: check memo</p>
   <div id="clock">    
     <div class="circle ul"></div>
     <div class="circle u"></div>
