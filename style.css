@@ -13,7 +13,7 @@ h1 {
 }
 #clock {
   position: absolute;
-  top: 220px;
+  top: 240px;
   height: 390px;
   width: 390px;
   left: 5%;
@@ -68,7 +68,4 @@ h1 {
 .dr {
   left: 280px;
   top: 280px;
-}   
-
-
-
+}
