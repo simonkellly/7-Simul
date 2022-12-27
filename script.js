@@ -155,3 +155,150 @@ function checkMemo() {
     alert(`Your memo: ${memo.toUpperCase()}\nCorrect memo: ${realMemo}`);
   }
 }
+
+function scrambleconvert(s) {
+  let n = [12,12,12,12,12,12,12,12,12,12,12,12,12,12]
+  for(let i of s.split("y2")[1].split(" ")){
+    console.log(i)
+    if(i.length==2){
+    }
+    else if(i.includes("ALL")){
+      for (let index of [0,1,2,3,4,5,6,7,8]) {
+        n[index] = eval("n[index]"+i.split("ALL")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("UL")){
+      for (let index of [0,1,3,4]) {
+        n[index] = eval("n[index]"+i.split("UL")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("UR")){
+      for (let index of [1,2,4,5]) {
+        n[index] = eval("n[index]"+i.split("UR")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("DL")){
+      for (let index of [3,4,6,7]) {
+        n[index] = eval("n[index]"+i.split("DL")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("DR")){
+      for (let index of [4,5,7,8]) {
+        n[index] = eval("n[index]"+i.split("DR")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("U")){
+      for (let index of [0,1,2,3,4,5]) {
+        n[index] = eval("n[index]"+i.split("U")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("L")){
+      for (let index of [0,1,3,4,6,7]) {
+        n[index] = eval("n[index]"+i.split("L")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("R")){
+      for (let index of [1,2,4,5,7,8]) {
+        n[index] = eval("n[index]"+i.split("R")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("D")){
+      for (let index of [3,4,5,6,7,8]) {
+        n[index] = eval("n[index]"+i.split("D")[1].split("").reverse().join("")); 
+      }      
+    }
+  }
+  for(let i of s.split("y2")[0].split(" ")){
+    console.log(i)
+    if(i.includes("ALL")){
+      for (let index of [9,10,11,12,13]) {
+        n[index] = eval("n[index]"+i.split("ALL")[1].split("").reverse().join("")); 
+      }
+      for (let index of [0,2,6,8]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("ALL")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("UL")){
+      for (let index of [11,12,13]) {
+        n[index] = eval("n[index]"+i.split("UL")[1].split("").reverse().join("")); 
+      }
+      for (let index of [2]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("UL")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("UR")){
+      for (let index of [10,11,13]) {
+        n[index] = eval("n[index]"+i.split("UR")[1].split("").reverse().join("")); 
+      }
+      for (let index of [0]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("UR")[1].split("").reverse().join("")); 
+      }   
+    }
+    else if(i.includes("DL")){
+      for (let index of [9,11,12]) {
+        n[index] = eval("n[index]"+i.split("DL")[1].split("").reverse().join("")); 
+      }
+      for (let index of [8]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("DL")[1].split("").reverse().join("")); 
+      } 
+    }
+    else if(i.includes("DR")){
+      for (let index of [9,10,11]) {
+        n[index] = eval("n[index]"+i.split("DR")[1].split("").reverse().join("")); 
+      }
+      for (let index of [6]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("DR")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("U")){
+      for (let index of [10,11,12,13]) {
+        n[index] = eval("n[index]"+i.split("U")[1].split("").reverse().join("")); 
+      }
+      for (let index of [0,2]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("U")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("L")){
+      for (let index of [9,11,12,13]) {
+        n[index] = eval("n[index]"+i.split("L")[1].split("").reverse().join("")); 
+      }
+      for (let index of [2,8]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("L")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("R")){
+      for (let index of [9,10,11,13]) {
+        n[index] = eval("n[index]"+i.split("R")[1].split("").reverse().join("")); 
+      }
+      for (let index of [0,6]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("R")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("D")){
+      for (let index of [9,10,11,12]) {
+        n[index] = eval("n[index]"+i.split("D")[1].split("").reverse().join("")); 
+      }
+      for (let index of [6,8]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("D")[1].split("").reverse().join("")); 
+      }
+    }
+  }
+  for(let i=0; i<n.length; i++){
+    n[i]==n[i]%12;
+  }
+  return n;
+}
+
+
+document.querySelector('#enterscramble').addEventListener("click", function() {
+  document.querySelector('#enterscramble').blur()
+  random = scrambleconvert(prompt("enter scramble:"))
+  console.log(random);
+  memo="";
+  document.querySelector("#memo").innerText="memo: ";
+  scramble();
+});
+document.querySelector('#change').addEventListener("click",  function() {
+  document.querySelector('#change').blur()
+  changePinOrder();
+});
