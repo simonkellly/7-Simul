@@ -3,13 +3,13 @@ body {
   font-family:Arial;
   color: white;
 }
-h1 {
-  color: white;
-  text-align: left;
+#scramble {
+  position: absolute;
+  top: 630px;
 }
 #info {
   position: absolute;
-  top: 630px;
+  top: 700px;
 }
 #clock {
   position: absolute;
