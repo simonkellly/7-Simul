@@ -11,6 +11,13 @@ body {
   position: absolute;
   top: 700px;
 }
+#settings {
+  position: absolute;
+  top: 860px;
+}
+#hiddenSettings {
+  display: none;
+}
 #clock {
   position: absolute;
   top: 240px;
