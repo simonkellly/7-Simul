@@ -3,17 +3,9 @@ body {
   font-family:Arial;
   color: white;
 }
-#scramble {
+#underScramble {
   position: absolute;
   top: 630px;
-}
-#info {
-  position: absolute;
-  top: 700px;
-}
-#settings {
-  position: absolute;
-  top: 860px;
 }
 #hiddenSettings {
   display: none;
