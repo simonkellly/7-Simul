@@ -193,21 +193,130 @@ function checkMemo() {
   }
 }
 
-function scrambleconvert(s){
-  n=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-  let effects = [[0, 9, 11, 12], [6, 11, 12, 13], [8, 10, 11, 13], [2, 9, 10, 11], [0, 2, 9, 10, 11, 12], [0, 6, 9, 11, 12, 13], [6, 8, 10, 11, 12, 13], [2, 8, 9, 10, 11, 13], [0, 2, 6, 8, 9, 10, 11, 12, 13], [0, 1, 2, 3, 4, 5], [1, 2, 4, 5, 7, 8], [3, 4, 5, 6, 7, 8], [0, 1, 3, 4, 6, 7], [0, 1, 2, 3, 4, 5, 6, 7, 8]];
-  moves = ["5-","4-","3-","2-","1-","0+","1+","2+","3+","4+","5+","6+"];
-  scr = s.split(" ");
-  scr.splice(9, 1);
-  for(let i=0; i<14; i++){
-      for(let x=0; x<effects[i].length; x++){
-          if (i<=8 && [0,2,6,8].includes(effects[i][x])){
-              n[effects[i][x]]-=moves.indexOf(scr[i].substr(-2))-5;  
-          }
-          else{
-              n[effects[i][x]]+=moves.indexOf(scr[i].substr(-2))-5;
-          }
+function scrambleconvert(s) {
+  let n = [12,12,12,12,12,12,12,12,12,12,12,12,12,12]
+  for(let i of s.split("y2")[1].split(" ")){
+    if(i.length==2){
+    }
+    else if(i.includes("ALL")){
+      for (let index of [0,1,2,3,4,5,6,7,8]) {
+        n[index] = eval("n[index]"+i.split("ALL")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("UL")){
+      for (let index of [0,1,3,4]) {
+        n[index] = eval("n[index]"+i.split("UL")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("UR")){
+      for (let index of [1,2,4,5]) {
+        n[index] = eval("n[index]"+i.split("UR")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("DL")){
+      for (let index of [3,4,6,7]) {
+        n[index] = eval("n[index]"+i.split("DL")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("DR")){
+      for (let index of [4,5,7,8]) {
+        n[index] = eval("n[index]"+i.split("DR")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("U")){
+      for (let index of [0,1,2,3,4,5]) {
+        n[index] = eval("n[index]"+i.split("U")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("L")){
+      for (let index of [0,1,3,4,6,7]) {
+        n[index] = eval("n[index]"+i.split("L")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("R")){
+      for (let index of [1,2,4,5,7,8]) {
+        n[index] = eval("n[index]"+i.split("R")[1].split("").reverse().join("")); 
+      }      
+    }
+    else if(i.includes("D")){
+      for (let index of [3,4,5,6,7,8]) {
+        n[index] = eval("n[index]"+i.split("D")[1].split("").reverse().join("")); 
+      }      
+    }
+  }
+  for(let i of s.split("y2")[0].split(" ")){
+    if(i.includes("ALL")){
+      for (let index of [9,10,11,12,13]) {
+        n[index] = eval("n[index]"+i.split("ALL")[1].split("").reverse().join("")); 
       }
+      for (let index of [0,2,6,8]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("ALL")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("UL")){
+      for (let index of [11,12,13]) {
+        n[index] = eval("n[index]"+i.split("UL")[1].split("").reverse().join("")); 
+      }
+      for (let index of [2]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("UL")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("UR")){
+      for (let index of [10,11,13]) {
+        n[index] = eval("n[index]"+i.split("UR")[1].split("").reverse().join("")); 
+      }
+      for (let index of [0]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("UR")[1].split("").reverse().join("")); 
+      }   
+    }
+    else if(i.includes("DL")){
+      for (let index of [9,11,12]) {
+        n[index] = eval("n[index]"+i.split("DL")[1].split("").reverse().join("")); 
+      }
+      for (let index of [8]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("DL")[1].split("").reverse().join("")); 
+      } 
+    }
+    else if(i.includes("DR")){
+      for (let index of [9,10,11]) {
+        n[index] = eval("n[index]"+i.split("DR")[1].split("").reverse().join("")); 
+      }
+      for (let index of [6]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("DR")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("U")){
+      for (let index of [10,11,12,13]) {
+        n[index] = eval("n[index]"+i.split("U")[1].split("").reverse().join("")); 
+      }
+      for (let index of [0,2]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("U")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("L")){
+      for (let index of [9,11,12,13]) {
+        n[index] = eval("n[index]"+i.split("L")[1].split("").reverse().join("")); 
+      }
+      for (let index of [2,8]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("L")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("R")){
+      for (let index of [9,10,11,13]) {
+        n[index] = eval("n[index]"+i.split("R")[1].split("").reverse().join("")); 
+      }
+      for (let index of [0,6]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("R")[1].split("").reverse().join("")); 
+      }
+    }
+    else if(i.includes("D")){
+      for (let index of [9,10,11,12]) {
+        n[index] = eval("n[index]"+i.split("D")[1].split("").reverse().join("")); 
+      }
+      for (let index of [6,8]) {
+        n[index] = eval("n[index]"+i.replace("+","*").replace("-","+").replace("*","-").split("D")[1].split("").reverse().join("")); 
+      }
+    }
   }
   return n.map(num => (num+144) % 12);
 }
