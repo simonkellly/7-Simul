@@ -68,3 +68,8 @@ body {
   left: 280px;
   top: 280px;
 }
+#bigText {
+  font-size: 25px;
+  font-weight: bold;
+  color: red;
+}
