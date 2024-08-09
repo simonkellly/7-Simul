@@ -430,3 +430,7 @@ document.querySelector("#scramble").addEventListener("click", function() {
 document.querySelector("#clock").addEventListener("click", function() {
   flip();
 });
+
+window.onkeydown = function(e) { 
+  return !(e.keyCode == 32 && e.target == document.body);
+}; 
